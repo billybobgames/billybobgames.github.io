@@ -84,7 +84,9 @@ Aidan Harris - Creator of LodlineGBA basis for (other, other) emulator used
 -
 jackmonty753 - Hoster of GBABandicoot, edited version of emulator above
 -
-Me (SeanS) - For making this
+Sean S. - for making Chili Bowl Games which I forked to make this.
+-
+Me (Billy Bob Games) - For making this
 -
 You - For playing it
 -
