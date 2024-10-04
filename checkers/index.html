@@ -1,110 +1,19 @@
 <!DOCTYPE html>
-<html><head>
-        <title>Checkers</title>
-        <link rel="stylesheet" href="reset.css" type="text/css">
-        <link rel="stylesheet" href="main.css" type="text/css">
-        <link rel="stylesheet" href="orientation_utils.css" type="text/css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-	<meta name="msapplication-tap-highlight" content="no">
-
-        <script type="text/javascript" src="jquery-2.0.3.min.js"></script>
-        <script type="text/javascript" src="createjs-2014.12.12.min.js"></script>
-        <script type="text/javascript" src="TreeModel.js"></script>
-        <script type="text/javascript" src="CTree.js"></script>
-        <script type="text/javascript" src="CTreeDecision.js"></script>
-        <script type="text/javascript" src="ctl_utils.js"></script>
-        <script type="text/javascript" src="sprite_lib.js"></script>
-        <script type="text/javascript" src="settings.js"></script>
-        <script type="text/javascript" src="CLang.js"></script>
-        <script type="text/javascript" src="CPreloader.js"></script>
-        <script type="text/javascript" src="CCreditsPanel.js"></script>
-        <script type="text/javascript" src="CMain.js"></script>
-        <script type="text/javascript" src="CTextButton.js"></script>
-        <script type="text/javascript" src="CToggle.js"></script>
-        <script type="text/javascript" src="CGfxButton.js"></script>
-        <script type="text/javascript" src="CMessage.js"></script>
-        <script type="text/javascript" src="CMenu.js"></script>
-        <script type="text/javascript" src="CModeMenu.js"></script>        
-        <script type="text/javascript" src="CGame.js"></script>
-        <script type="text/javascript" src="CInterface.js"></script>
-        <script type="text/javascript" src="CStartAnimation.js"></script>
-        <script type="text/javascript" src="CInfoTurn.js"></script>
-        <script type="text/javascript" src="CThinking.js"></script>
-        <script type="text/javascript" src="CEndPanel.js"></script>
-        <script type="text/javascript" src="CCell.js"></script>
-        <script type="text/javascript" src="CMovingCell.js"></script>
-        
-    <style type="text/css">* {<br>		-webkit-user-select: text !important;<br>		-moz-user-select: text !important;<br>		-ms-user-select: text !important;<br>		 user-select: text !important;<br>	}</style></head>
-    <body ondragstart="if (!window.__cfRLUnblockHandlers) return false; return false;" ondrop="if (!window.__cfRLUnblockHandlers) return false; return false;" style="">
-	<div style="position: fixed; background-color: #000000; top: 0px; left: 0px; width: 100%; height: 100%"></div>
-          <script type="text/javascript">
-            $(document).ready(function(){
-                     var oMain = new CMain({
-                                            check_orientation: true,
-                                            fullscreen: true
-                                           });
-                                           
-                                           
-                     $(oMain).on("start_session", function(evt) {
-                            if(getParamValue('ctl-arcade') === "true"){
-                                parent.__ctlArcadeStartSession();
-                            }
-                            //...ADD YOUR CODE HERE EVENTUALLY
-                    });
-                     
-                    $(oMain).on("end_session", function(evt) {
-                           if(getParamValue('ctl-arcade') === "true"){
-                               parent.__ctlArcadeEndSession();
-                           }
-                           //...ADD YOUR CODE HERE EVENTUALLY
-                    });
-                    
-                    $(oMain).on("save_score", function(evt,iWinner, iBlackTime, iWhiteTime, s_iGameType, iWhiteScore) {
-							// iWinner: 
-							// -1 IS DRAW
-							//0 WHITE WINS
-							//1 BLACK WINS
-							//2 WHITE WINS CAUSE BLACK CAN'T MOVE
-							//3 BLACK WINS CAUSE WHITE CAN'T MOVE
-							
-                            //alert("iBlackPoints: "+iBlackPoints+", iWhitePoints: "+iWhitePoints+", iBlackTime: "+iBlackTime+", iWhiteTime: "+iWhiteTime);
-                            if(getParamValue('ctl-arcade') === "true" && s_iGameType === 1 && iWinner === 0){
-                               parent.__ctlArcadeSaveScore({score:iWhiteScore, szMode: s_iGameType+""});
-                           }
-                     });
-                     
-                     $(oMain).on("share_event", function(evt, iScore, s_iGameType, iWinner) {
-                           if(getParamValue('ctl-arcade') === "true" && s_iGameType === 1 && iWinner === 0){
-                               parent.__ctlArcadeShareEvent({   img: TEXT_SHARE_IMAGE,
-                                                                title: TEXT_SHARE_TITLE,
-                                                                msg: TEXT_SHARE_MSG1 + iScore + TEXT_SHARE_MSG2,
-                                                                msg_share: TEXT_SHARE_SHARE1 + iScore + TEXT_SHARE_SHARE1});
-                           }
-                           //...ADD YOUR CODE HERE EVENTUALLY
-                    });
-
-
-                    $(oMain).on("show_interlevel_ad", function(evt) {
-                           if(getParamValue('ctl-arcade') === "true"){
-                               parent.__ctlArcadeShowInterlevelAD();
-                           }
-                           //...ADD YOUR CODE HERE EVENTUALLY
-                    });
-                     
-                     if(isIOS()){ 
-                        setTimeout(function(){sizeHandler();},200); 
-                    }else{
-                        sizeHandler(); 
-                    }
-           });
-
-        </script>
-        <canvas id="canvas" class="ani_hack" width="376" height="564" style="width: 487.784px; height: 731.676px; top: -83.8378px; left: 159.108px;"> </canvas>
-        <div data-orientation="portrait" class="orientation-msg-container"><p class="orientation-msg-text">Please rotate your device</p></div>
-        <div id="block_game" style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"></div>
-
-    
-
-</body></html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Checkers</title>
+</head>
+<body>
+<div id="root" class="container">
+</div>
+<div class="container">
+    <a href="https://github.com/kschuetz/checkers" target="_blank">Source code on GitHub</a>
+</div>
+<div id="dialog-root">
+</div>
+<script type="module" src="/main.js"></script>
+</body>
+</html>
