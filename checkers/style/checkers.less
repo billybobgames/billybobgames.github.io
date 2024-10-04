@@ -1,0 +1,384 @@
+
+.backdrop {
+  fill: #aaa;
+}
+
+.board-border {
+  fill: #606060;
+}
+
+.board-square {
+  stroke-width: 0.05;
+
+  stroke: black;
+
+  &.dark {
+    fill: #888888;
+  }
+
+  &.light {
+    fill: #eeeeee;
+  }
+
+}
+
+.piece {
+  stroke-width: 0.12;
+
+  &.dark {
+    fill: #4b4b50;
+    stroke: #2f2f2f;
+  }
+
+  &.light {
+    fill: red;
+    stroke: #d40000;
+  }
+}
+
+.pip {
+  stroke: none;
+  &.dark {
+    fill: #060606;
+  }
+
+  &.light {
+    fill: #ed2220;
+  }
+}
+
+.star-a {
+  stroke: none;
+  &.light {
+    fill: #e40000;
+  }
+  &.dark {
+    fill: #2e2e2e;
+  }
+}
+
+.star-b {
+  stroke: none;
+  &.light {
+    fill: #d70000;
+  }
+  &.dark {
+    fill: #1c1c1c;
+  }
+}
+
+.crown-a {
+  stroke: none;
+  &.light {
+    fill: #e70000;
+  }
+  &.dark {
+    fill: #2e2e2e;
+  }
+}
+
+.crown-b {
+  stroke: none;
+  &.light {
+    fill: #e10000;
+  }
+  &.dark {
+    fill: #252525;
+  }
+}
+
+.crown-c {
+  stroke: none;
+  &.light {
+    fill: #e60000;
+  }
+  &.dark {
+    fill: #2d2d2d;
+  }
+}
+
+.piece-button-layer {
+  stroke-width:  0.24;
+  stroke: transparent;
+  fill: transparent;
+}
+
+.piece-button-layer.welcome:hover {
+  stroke: transparent;
+  fill: green;
+  fill-opacity: 0.25;
+  cursor: pointer;
+}
+
+.square-button-layer {
+  stroke: none;
+  fill:  transparent;
+}
+
+.square-button-layer.welcome:hover {
+  fill: green;
+  fill-opacity: 0.25;
+  cursor: pointer;
+}
+
+.ghost-piece {
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.picked-up-piece {
+  pointer-events: none;
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}
+
+#top-chrome {
+  background: yellow;
+}
+
+.player-panel-backdrop.dark {
+  fill: gray;
+  stroke: none;
+}
+
+.player-panel-backdrop.light {
+  fill: lightgray;
+  stroke: none;
+}
+
+.turn-indicator {
+  fill: green;
+  stroke: black;
+  stroke-width: 0.02;
+}
+
+.turn-indicator.ending-turn {
+  opacity: 0.3;
+}
+
+.no-symbol.dark {
+  fill: red;
+}
+
+.no-symbol.light {
+  fill: black;
+}
+
+.jump-indicator-arrow {
+  fill: #eeeeee;
+  stroke-width: 0.02;
+  stroke: #aaaaaa;
+}
+
+.side-chrome-backdrop {
+  fill: black;
+}
+
+.button .button-body rect {
+  stroke: #a1a1a1;
+  stroke-width: 2px;
+  fill: #808080;
+}
+
+.button text {
+  fill: #eee;
+  pointer-events: none;
+  text-anchor: middle;
+  .no-text-select
+}
+
+.button.enabled {
+  cursor: pointer;
+}
+
+.button.disabled {
+  .button-body {
+    rect {
+      stroke: #555555;
+      fill: #404040;
+    }
+  }
+
+  text {
+    fill: #777;
+  }
+}
+
+.button.rush-button .button-body rect {
+  fill: #d9dbeb;
+  stroke: #a4a4a4;
+}
+
+.rush-button-glyph {
+  pointer-events: none;
+
+  .ring {
+    stroke: red;
+    fill: none;
+  }
+
+  .slash {
+    fill: red;
+    stroke: none;
+  }
+}
+
+.game-over-panel text {
+  fill: #eee;
+  pointer-events: none;
+  text-anchor: middle;
+  .no-text-select
+}
+
+.game-over-panel-backdrop {
+  fill: #3971d0;
+  stroke-width: 5px;
+  stroke: black;
+  cursor: pointer;
+}
+
+.player-name-label {
+  .no-text-select
+}
+
+.player-name-label.my-turn {
+  font-weight: bold;
+}
+
+.player-name-label.dark {
+  fill: white;
+}
+
+.player-name-label.light {
+  fill: black;
+}
+
+.clock-display {
+  font-family: monospace;
+  .no-text-select
+}
+
+.clock-display.dark {
+  fill: white;
+}
+
+.clock-display.light {
+  fill: black;
+}
+
+.thinking-indicator {
+  .segment.even {
+    fill:#25bdff;
+  }
+
+  .segment.odd {
+    fill: #20a5ed;
+  }
+
+  .border {
+    fill: none;
+    stroke: #a4a4a4;
+    stroke-width: 3px;
+  }
+}
+
+.hint-arrow {
+  pointer-events: none;
+  fill: #56fffa;
+  stroke: black;
+  stroke-width: 0.02;
+}
+
+.hint-arrow.high {
+  opacity: 0.75;
+}
+.hint-arrow.low {
+  opacity: 0.1;
+}
+
+.last-move-indicator {
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.last-move-indicator.dark {
+  fill: black;
+  stroke: none;
+}
+
+.last-move-indicator.light {
+  fill: red;
+  stroke: black;
+  stroke-width: 0.02;
+}
+
+.game-log-entry {
+  font-family: monospace;
+  text {
+    fill: black;
+  }
+}
+
+.game-log-entry-backdrop {
+  stroke: none
+}
+
+.game-log-entry-backdrop.even {
+  fill: #dedede
+}
+
+.game-log-entry-backdrop.odd {
+  fill: #d1d1d1;
+}
+
+.scroll-button-glyph {
+  fill: #bbb;
+  pointer-events: none;
+}
+
+.power-meter-backdrop {
+  fill: none;
+  stroke: #bbb;
+  stroke-width: 2px;
+}
+
+.power-meter-side {
+  stroke: none;
+}
+
+.power-meter-side.light {
+  fill: red;
+}
+
+.power-meter-side.dark {
+  fill: #333;
+}
+
+.power-meter-center-mark {
+  stroke: rgba(187, 187, 187, 0.89);
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-dasharray: 1, 3;
+}
+
+.draw-countdown-indicator-backdrop {
+  fill: gold;
+  stroke: none;
+}
+
+.draw-countdown-indicator {
+  text {
+    .no-text-select
+  }
+
+  .countdown-value {
+    font-family: monospace;
+    fill: black;
+  }
+
+  .countdown-caption {
+    fill: #333;
+  }
+}
